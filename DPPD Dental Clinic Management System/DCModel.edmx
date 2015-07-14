@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DCModelStoreContainer">
+          <EntitySet Name="Dates" EntityType="DCModel.Store.Dates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Diagnosis" EntityType="DCModel.Store.Diagnosis" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DiagnosisList" EntityType="DCModel.Store.DiagnosisList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Login" EntityType="DCModel.Store.Login" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patient_info" EntityType="DCModel.Store.Patient_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProcedureList" EntityType="DCModel.Store.ProcedureList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="X-ray_images" EntityType="DCModel.Store.X-ray_images" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Dates_Patient_info" Association="DCModel.Store.FK_Dates_Patient_info">
+            <End Role="Patient_info" EntitySet="Patient_info" />
+            <End Role="Dates" EntitySet="Dates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnosis_Patient_info" Association="DCModel.Store.FK_Diagnosis_Patient_info">
+            <End Role="Patient_info" EntitySet="Patient_info" />
+            <End Role="Diagnosis" EntitySet="Diagnosis" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X-ray_images_Patient_info" Association="DCModel.Store.FK_X-ray_images_Patient_info">
+            <End Role="Patient_info" EntitySet="Patient_info" />
+            <End Role="X-ray_images" EntitySet="X-ray_images" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Dates">
+          <Key>
+            <PropertyRef Name="Virtual_ID" />
+          </Key>
+          <Property Name="Dates_ID" Type="int" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Doctor_name" Type="ntext" Nullable="false" />
+          <Property Name="Procedures" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Procedure_Comment" Type="ntext" />
+          <Property Name="Medication" Type="ntext" />
+          <Property Name="Supervisor_signature" Type="ntext" Nullable="false" />
+          <Property Name="Virtual_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Diagnosis">
+          <Key>
+            <PropertyRef Name="Virtual_ID" />
+          </Key>
+          <Property Name="Diagnose_ID" Type="int" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Diagnose" Type="ntext" Nullable="false" />
+          <Property Name="Treatment_Plan" Type="ntext" Nullable="false" />
+          <Property Name="Virtual_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="DiagnosisList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Diagnose" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Patient_info">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Patient_name" Type="ntext" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Visit_date" Type="date" Nullable="false" />
+          <Property Name="Birth_date" Type="date" Nullable="false" />
+          <Property Name="Patient_image" Type="image" Nullable="false" />
+          <Property Name="Sex" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="Home_number" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Phone_number" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="Address" Type="ntext" Nullable="false" />
+          <Property Name="Cheif_complaint" Type="ntext" Nullable="false" />
+          <Property Name="Medical_alert" Type="ntext" Nullable="false" />
+          <Property Name="Relative_marriage" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="DMF" Type="float" Nullable="false" />
+          <Property Name="_dmf" Type="float" Nullable="false" />
+          <Property Name="DEF" Type="float" Nullable="false" />
+          <Property Name="D_DMF" Type="float" />
+          <Property Name="M_DMF" Type="float" />
+          <Property Name="F_DMF" Type="float" />
+          <Property Name="dd_dmf" Type="float" />
+          <Property Name="mm_dmf" Type="float" />
+          <Property Name="ff_dmf" Type="float" />
+          <Property Name="D_DEF" Type="float" />
+          <Property Name="E_DEF" Type="float" />
+          <Property Name="F_DEF" Type="float" />
+          <Property Name="Comments" Type="ntext" />
+        </EntityType>
+        <EntityType Name="ProcedureList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Procedures" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="X-ray_images">
+          <Key>
+            <PropertyRef Name="Virtual_ID" />
+          </Key>
+          <Property Name="Xray_images_ID" Type="int" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Xray_image" Type="image" Nullable="false" />
+          <Property Name="Image_name" Type="ntext" />
+          <Property Name="Virtual_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_Dates_Patient_info">
+          <End Role="Patient_info" Type="DCModel.Store.Patient_info" Multiplicity="1" />
+          <End Role="Dates" Type="DCModel.Store.Dates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient_info">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Dates">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnosis_Patient_info">
+          <End Role="Patient_info" Type="DCModel.Store.Patient_info" Multiplicity="1" />
+          <End Role="Diagnosis" Type="DCModel.Store.Diagnosis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient_info">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Diagnosis">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X-ray_images_Patient_info">
+          <End Role="Patient_info" Type="DCModel.Store.Patient_info" Multiplicity="1" />
+          <End Role="X-ray_images" Type="DCModel.Store.X-ray_images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient_info">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="X-ray_images">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DCModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DCEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Patient_info" EntityType="DCModel.Patient_info" />
+          <EntitySet Name="DiagnosisLists" EntityType="DCModel.DiagnosisList" />
+          <EntitySet Name="ProcedureLists" EntityType="DCModel.ProcedureList" />
+          <EntitySet Name="Dates" EntityType="DCModel.Date" />
+          <EntitySet Name="Diagnoses" EntityType="DCModel.Diagnosis" />
+          <EntitySet Name="Logins" EntityType="DCModel.Login" />
+          <EntitySet Name="X_ray_images" EntityType="DCModel.X_ray_images" />
+          <AssociationSet Name="FK_Dates_Patient_info" Association="DCModel.FK_Dates_Patient_info">
+            <End Role="Patient_info" EntitySet="Patient_info" />
+            <End Role="Date" EntitySet="Dates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Diagnosis_Patient_info" Association="DCModel.FK_Diagnosis_Patient_info">
+            <End Role="Patient_info" EntitySet="Patient_info" />
+            <End Role="Diagnosis" EntitySet="Diagnoses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_X_ray_images_Patient_info" Association="DCModel.FK_X_ray_images_Patient_info">
+            <End Role="Patient_info" EntitySet="Patient_info" />
+            <End Role="X_ray_images" EntitySet="X_ray_images" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Patient_info">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Type="Int32" Name="Patient_ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="String" Name="Patient_name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Age" Nullable="false" />
+          <Property Type="DateTime" Name="Visit_date" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Birth_date" Nullable="false" Precision="0" />
+          <Property Type="Binary" Name="Patient_image" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Sex" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Home_number" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone_number" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Cheif_complaint" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Medical_alert" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Relative_marriage" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="Double" Name="DMF" Nullable="false" />
+          <Property Type="Double" Name="C_dmf" Nullable="false" />
+          <Property Type="Double" Name="DEF" Nullable="false" />
+          <Property Type="String" Name="Comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dates" Relationship="DCModel.FK_Dates_Patient_info" FromRole="Patient_info" ToRole="Date" />
+          <NavigationProperty Name="Diagnoses" Relationship="DCModel.FK_Diagnosis_Patient_info" FromRole="Patient_info" ToRole="Diagnosis" />
+          <NavigationProperty Name="X_ray_images" Relationship="DCModel.FK_X_ray_images_Patient_info" FromRole="Patient_info" ToRole="X_ray_images" />
+          <Property Type="Double" Name="D_DMF" />
+          <Property Type="Double" Name="M_DMF" />
+          <Property Type="Double" Name="F_DMF" />
+          <Property Type="Double" Name="dd_dmf" />
+          <Property Type="Double" Name="mm_dmf" />
+          <Property Type="Double" Name="ff_dmf" />
+          <Property Type="Double" Name="D_DEF" />
+          <Property Type="Double" Name="E_DEF" />
+          <Property Type="Double" Name="F_DEF" />
+          </EntityType>
+        <EntityType Name="DiagnosisList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Diagnose" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProcedureList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Procedures" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Date">
+          <Key>
+            <PropertyRef Name="Virtual_ID" />
+          </Key>
+          <Property Type="Int32" Name="Dates_ID" Nullable="false" />
+          <Property Type="Int32" Name="Patient_ID" Nullable="false" />
+          <Property Type="DateTime" Name="Date1" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Doctor_name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Procedures" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Procedure_Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Medication" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Supervisor_signature" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patient_info" Relationship="DCModel.FK_Dates_Patient_info" FromRole="Date" ToRole="Patient_info" />
+          <Property Type="Int32" Name="Virtual_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Diagnosis">
+          <Key>
+            <PropertyRef Name="Virtual_ID" />
+          </Key>
+          <Property Type="Int32" Name="Diagnose_ID" Nullable="false" />
+          <Property Type="Int32" Name="Patient_ID" Nullable="false" />
+          <Property Type="String" Name="Diagnose" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Treatment_Plan" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patient_info" Relationship="DCModel.FK_Diagnosis_Patient_info" FromRole="Diagnosis" ToRole="Patient_info" />
+          <Property Type="Int32" Name="Virtual_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Type="Int32" Name="User_ID" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="X_ray_images">
+          <Key>
+            <PropertyRef Name="Virtual_ID" />
+          </Key>
+          <Property Type="Int32" Name="Xray_images_ID" Nullable="false" />
+          <Property Type="Int32" Name="Patient_ID" Nullable="false" />
+          <Property Type="Binary" Name="Xray_image" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Image_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patient_info" Relationship="DCModel.FK_X_ray_images_Patient_info" FromRole="X_ray_images" ToRole="Patient_info" />
+          <Property Type="Int32" Name="Virtual_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="FK_Dates_Patient_info">
+          <End Type="DCModel.Patient_info" Role="Patient_info" Multiplicity="1" />
+          <End Type="DCModel.Date" Role="Date" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient_info">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Date">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Diagnosis_Patient_info">
+          <End Type="DCModel.Patient_info" Role="Patient_info" Multiplicity="1" />
+          <End Type="DCModel.Diagnosis" Role="Diagnosis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient_info">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Diagnosis">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_X_ray_images_Patient_info">
+          <End Type="DCModel.Patient_info" Role="Patient_info" Multiplicity="1" />
+          <End Type="DCModel.X_ray_images" Role="X_ray_images" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient_info">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="X_ray_images">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DCModelStoreContainer" CdmEntityContainer="DCEntities">
+          <EntitySetMapping Name="Patient_info">
+            <EntityTypeMapping TypeName="DCModel.Patient_info">
+              <MappingFragment StoreEntitySet="Patient_info">
+                <ScalarProperty Name="F_DEF" ColumnName="F_DEF" />
+                <ScalarProperty Name="E_DEF" ColumnName="E_DEF" />
+                <ScalarProperty Name="D_DEF" ColumnName="D_DEF" />
+                <ScalarProperty Name="ff_dmf" ColumnName="ff_dmf" />
+                <ScalarProperty Name="mm_dmf" ColumnName="mm_dmf" />
+                <ScalarProperty Name="dd_dmf" ColumnName="dd_dmf" />
+                <ScalarProperty Name="F_DMF" ColumnName="F_DMF" />
+                <ScalarProperty Name="M_DMF" ColumnName="M_DMF" />
+                <ScalarProperty Name="D_DMF" ColumnName="D_DMF" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="DEF" ColumnName="DEF" />
+                <ScalarProperty Name="C_dmf" ColumnName="_dmf" />
+                <ScalarProperty Name="DMF" ColumnName="DMF" />
+                <ScalarProperty Name="Relative_marriage" ColumnName="Relative_marriage" />
+                <ScalarProperty Name="Medical_alert" ColumnName="Medical_alert" />
+                <ScalarProperty Name="Cheif_complaint" ColumnName="Cheif_complaint" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+                <ScalarProperty Name="Home_number" ColumnName="Home_number" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Patient_image" ColumnName="Patient_image" />
+                <ScalarProperty Name="Birth_date" ColumnName="Birth_date" />
+                <ScalarProperty Name="Visit_date" ColumnName="Visit_date" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Patient_name" ColumnName="Patient_name" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiagnosisLists">
+            <EntityTypeMapping TypeName="DCModel.DiagnosisList">
+              <MappingFragment StoreEntitySet="DiagnosisList">
+                <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcedureLists">
+            <EntityTypeMapping TypeName="DCModel.ProcedureList">
+              <MappingFragment StoreEntitySet="ProcedureList">
+                <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dates">
+            <EntityTypeMapping TypeName="DCModel.Date">
+              <MappingFragment StoreEntitySet="Dates">
+                <ScalarProperty Name="Virtual_ID" ColumnName="Virtual_ID" />
+                <ScalarProperty Name="Supervisor_signature" ColumnName="Supervisor_signature" />
+                <ScalarProperty Name="Medication" ColumnName="Medication" />
+                <ScalarProperty Name="Procedure_Comment" ColumnName="Procedure_Comment" />
+                <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+                <ScalarProperty Name="Doctor_name" ColumnName="Doctor_name" />
+                <ScalarProperty Name="Date1" ColumnName="Date" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Dates_ID" ColumnName="Dates_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diagnoses">
+            <EntityTypeMapping TypeName="DCModel.Diagnosis">
+              <MappingFragment StoreEntitySet="Diagnosis">
+                <ScalarProperty Name="Virtual_ID" ColumnName="Virtual_ID" />
+                <ScalarProperty Name="Treatment_Plan" ColumnName="Treatment_Plan" />
+                <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Diagnose_ID" ColumnName="Diagnose_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="DCModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_ray_images">
+            <EntityTypeMapping TypeName="DCModel.X_ray_images">
+              <MappingFragment StoreEntitySet="X-ray_images">
+                <ScalarProperty Name="Virtual_ID" ColumnName="Virtual_ID" />
+                <ScalarProperty Name="Image_name" ColumnName="Image_name" />
+                <ScalarProperty Name="Xray_image" ColumnName="Xray_image" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Xray_images_ID" ColumnName="Xray_images_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

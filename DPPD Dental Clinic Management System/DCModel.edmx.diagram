@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d9822803aea042e6913bab7614d4f622" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="DCModel.Patient_info" Width="1.5" PointX="4.625" PointY="2.875" />
+        <EntityTypeShape EntityType="DCModel.DiagnosisList" Width="1.5" PointX="7.25" PointY="7.125" />
+        <EntityTypeShape EntityType="DCModel.ProcedureList" Width="1.5" PointX="9.25" PointY="7.125" />
+        <EntityTypeShape EntityType="DCModel.Date" Width="1.5" PointX="1.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DCModel.Diagnosis" Width="1.5" PointX="7.75" PointY="4.5" />
+        <EntityTypeShape EntityType="DCModel.Login" Width="1.5" PointX="7" PointY="1.75" />
+        <EntityTypeShape EntityType="DCModel.X_ray_images" Width="1.5" PointX="2" PointY="1" />
+        <AssociationConnector Association="DCModel.FK_Dates_Patient_info" />
+        <AssociationConnector Association="DCModel.FK_Diagnosis_Patient_info" />
+        <AssociationConnector Association="DCModel.FK_X_ray_images_Patient_info" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,20 @@
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\bin\Release\DPPD Dental Clinic Management System.exe.config
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\bin\Release\DPPD Dental Clinic Management System.exe
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\bin\Release\DPPD Dental Clinic Management System.pdb
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\bin\Release\EntityFramework.dll
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\bin\Release\EntityFramework.xml
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Add_new_Patient.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Create_New_Account.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Database_Browser.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Login_Form.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Patient_Profile_Viewer.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Properties.Resources.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Search_Result.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Search.resources
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD Dental Clinic Management System.csproj.GenerateResource.Cache
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD Dental Clinic Management System.exe
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD Dental Clinic Management System.pdb
+C:\Users\Mohamed\documents\visual studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Edit_Patient.resources
+C:\Users\Mohamed\Documents\Visual Studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Delete_Patients.resources
+C:\Users\Mohamed\Documents\Visual Studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD_Dental_Clinic_Management_System.Statistics.resources
+C:\Users\Mohamed\Documents\Visual Studio 2012\Projects\DPPD Dental Clinic Management System\DPPD Dental Clinic Management System\obj\Release\DPPD Dental Clinic Management System.csprojResolveAssemblyReference.cache

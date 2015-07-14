@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DCModelStoreContainer" CdmEntityContainer="DCEntities">
+    <EntitySetMapping Name="Patient_info">
+      <EntityTypeMapping TypeName="DCModel.Patient_info">
+        <MappingFragment StoreEntitySet="Patient_info">
+          <ScalarProperty Name="F_DEF" ColumnName="F_DEF" />
+          <ScalarProperty Name="E_DEF" ColumnName="E_DEF" />
+          <ScalarProperty Name="D_DEF" ColumnName="D_DEF" />
+          <ScalarProperty Name="ff_dmf" ColumnName="ff_dmf" />
+          <ScalarProperty Name="mm_dmf" ColumnName="mm_dmf" />
+          <ScalarProperty Name="dd_dmf" ColumnName="dd_dmf" />
+          <ScalarProperty Name="F_DMF" ColumnName="F_DMF" />
+          <ScalarProperty Name="M_DMF" ColumnName="M_DMF" />
+          <ScalarProperty Name="D_DMF" ColumnName="D_DMF" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="DEF" ColumnName="DEF" />
+          <ScalarProperty Name="C_dmf" ColumnName="_dmf" />
+          <ScalarProperty Name="DMF" ColumnName="DMF" />
+          <ScalarProperty Name="Relative_marriage" ColumnName="Relative_marriage" />
+          <ScalarProperty Name="Medical_alert" ColumnName="Medical_alert" />
+          <ScalarProperty Name="Cheif_complaint" ColumnName="Cheif_complaint" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+          <ScalarProperty Name="Home_number" ColumnName="Home_number" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Patient_image" ColumnName="Patient_image" />
+          <ScalarProperty Name="Birth_date" ColumnName="Birth_date" />
+          <ScalarProperty Name="Visit_date" ColumnName="Visit_date" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Patient_name" ColumnName="Patient_name" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiagnosisLists">
+      <EntityTypeMapping TypeName="DCModel.DiagnosisList">
+        <MappingFragment StoreEntitySet="DiagnosisList">
+          <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcedureLists">
+      <EntityTypeMapping TypeName="DCModel.ProcedureList">
+        <MappingFragment StoreEntitySet="ProcedureList">
+          <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dates">
+      <EntityTypeMapping TypeName="DCModel.Date">
+        <MappingFragment StoreEntitySet="Dates">
+          <ScalarProperty Name="Virtual_ID" ColumnName="Virtual_ID" />
+          <ScalarProperty Name="Supervisor_signature" ColumnName="Supervisor_signature" />
+          <ScalarProperty Name="Medication" ColumnName="Medication" />
+          <ScalarProperty Name="Procedure_Comment" ColumnName="Procedure_Comment" />
+          <ScalarProperty Name="Procedures" ColumnName="Procedures" />
+          <ScalarProperty Name="Doctor_name" ColumnName="Doctor_name" />
+          <ScalarProperty Name="Date1" ColumnName="Date" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Dates_ID" ColumnName="Dates_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diagnoses">
+      <EntityTypeMapping TypeName="DCModel.Diagnosis">
+        <MappingFragment StoreEntitySet="Diagnosis">
+          <ScalarProperty Name="Virtual_ID" ColumnName="Virtual_ID" />
+          <ScalarProperty Name="Treatment_Plan" ColumnName="Treatment_Plan" />
+          <ScalarProperty Name="Diagnose" ColumnName="Diagnose" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Diagnose_ID" ColumnName="Diagnose_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="DCModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="X_ray_images">
+      <EntityTypeMapping TypeName="DCModel.X_ray_images">
+        <MappingFragment StoreEntitySet="X-ray_images">
+          <ScalarProperty Name="Virtual_ID" ColumnName="Virtual_ID" />
+          <ScalarProperty Name="Image_name" ColumnName="Image_name" />
+          <ScalarProperty Name="Xray_image" ColumnName="Xray_image" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Xray_images_ID" ColumnName="Xray_images_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
